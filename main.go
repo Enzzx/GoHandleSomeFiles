@@ -11,14 +11,23 @@ import (
 type commandFunc func([]string)
 
 var commandMap = map[string]commandFunc {
-	"readFile": handler.ReadFile,
+	//read.go
+	"read": handler.Read,
+	"show": handler.Show,
+	"this": handler.Show,
+	"info": handler.Info,
+	"have": handler.Have,
+
+	//delete.go
+	"del": handler.Del,
 }
 
 
 func main() {
 	reader := bufio.NewReader(os.Stdin)
 	for  {
-		fmt.Print("> ")
+		pwd, _ := os.Getwd()
+		fmt.Print(pwd, " >> ")
 		input, _ := reader.ReadString('\n')
 		input = strings.TrimSpace(input)
 		inputList := strings.Fields(input)
@@ -28,5 +37,6 @@ func main() {
 		} else {
 			fmt.Println("Pass a valid command")
 		}
+		fmt.Println("")
 	}
 }
