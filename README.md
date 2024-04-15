@@ -1,7 +1,7 @@
 # FileHandler
 A CLI file handler in Go
 
-## Comandos Disponíveis
+### Comandos Disponíveis
 **help**: Exibe uma mensagem de ajuda mostrando uma lista de comandos disponíveis e suas descrições.
 ```help```
 
