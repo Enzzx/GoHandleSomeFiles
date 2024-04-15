@@ -11,12 +11,24 @@ import (
 type commandFunc func([]string)
 
 var commandMap = map[string]commandFunc {
+	//create.go
+	"start": handler.Start,
+	"startDir": handler.SDir,
+	"copy": handler.Copy,
+
 	//read.go
 	"read": handler.Read,
 	"show": handler.Show,
 	"this": handler.Show,
 	"info": handler.Info,
-	"have": handler.Have,
+	"exist": handler.Exist,
+	"help": handler.Help,
+
+	//update.go
+	"add": handler.Add,
+	"switch": handler.Switch,
+	"move": handler.Move,
+	"goto": handler.Goto,
 
 	//delete.go
 	"del": handler.Del,
